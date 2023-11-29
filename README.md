@@ -8,11 +8,11 @@
 
 ### Инструкция к репозиторию
 
-* Prosept_script.py - скрипт для сборки докера.
+* `Prosept_script.py` - скрипт для сборки докера.
   
 В папке `project_description`:
-* Prosept_script.ipynb - скрипт, записанный в тетрадке Jupyter Notebook. 
-* Prosept_project.ipynb - тетрадка с подробным описание хода выполнения проекта.
+* `Prosept_script.ipynb` - скрипт, записанный в тетрадке Jupyter Notebook. 
+* `Prosept_project.ipynb` - тетрадка с подробным описание хода выполнения проекта.
 
 ### Описание решения
 
