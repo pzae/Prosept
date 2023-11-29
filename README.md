@@ -13,6 +13,8 @@
 В папке `project_description`:
 * `Prosept_script.ipynb` - скрипт, записанный в тетрадке Jupyter Notebook. 
 * `Prosept_project.ipynb` - тетрадка с подробным описание хода выполнения проекта.
+* `requirements.txt` - файл для создания докера
+* `Dockerfile` - файл для создания докера
 
 ### Описание решения
 
