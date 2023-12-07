@@ -1,4 +1,3 @@
-import pandas as pd
 from Prosept_func import Prosept_func
 
 def main():
