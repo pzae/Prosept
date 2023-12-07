@@ -13,28 +13,28 @@ class Prosept_func:
         pass
 
     def preprocess_dealerprice(self, url_dealerprice):
+        
         df = requests.get(url_dealerprice)
         df = pd.json_normalize(df.json())
-
         df = df[['product_key', 'product_name']]
         df.drop_duplicates(inplace=True)
-
+        
         return df
 
     def preprocess_product(self, url_product):
+        
         df = requests.get(url_product)
         df = pd.json_normalize(df.json())
-
         df = df[['id', 'name']]
         df.dropna(inplace=True)
         df.drop_duplicates(subset='name', inplace=True)
-
         df['id_unique'] = pd.factorize(df['name'])[0]
         df.set_index('id_unique', inplace=True)
 
         return df
 
     def preprocess_text(self, text):
+        
         text = text.lower()
         text = re.compile(r'(?<=[а-яА-Я])(?=[A-Za-z])|(?<=[A-Za-z])(?=[а-яА-Я])').sub(" ", str(text))
         text = re.sub(r'(\d+)\s*мл', lambda x: str(int(x.group(1)) / 1000) + ' ' + 'л', text)
@@ -68,6 +68,7 @@ class Prosept_func:
         return pred, pred_sim
 
     def get_id_key(self, pred, df_product):
+        
         result = []
         product_id = dict(df_product['id'])
 
@@ -89,6 +90,7 @@ class Prosept_func:
         return json_result
 
     def save_json(self, url, data):
+        
         if url:
             requests.post(url, json=data)
         else:
