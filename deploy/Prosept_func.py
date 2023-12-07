@@ -39,7 +39,7 @@ class Prosept_func:
         text = re.compile(r'(?<=[а-яА-Я])(?=[A-Za-z])|(?<=[A-Za-z])(?=[а-яА-Я])').sub(" ", str(text))
         text = re.sub(r'(\d+)\s*мл', lambda x: str(int(x.group(1)) / 1000) + ' ' + 'л', text)
         text = re.sub(r'[!#$%&\'()*+,./:;<=>?@[\]^_`{|}~—\"\\-]+', ' ', text)
-        text = re.sub(r'(средство|мытья|для|чистящее|удаления|очистки)', r'\1 ', str(text))
+        text = re.sub(r'(средство|мытья|для|чистящее|удаления|очистки|плесени|добавка|prosept)', r'\1 ', str(text))
         text = re.sub(r'\b(?:и|для|д|с|ф|п|ая|007|i)\b', '', text)
 
         return text
